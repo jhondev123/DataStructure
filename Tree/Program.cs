@@ -26,33 +26,30 @@ Node StartingTree()
 
         temp.Right = null;
         temp.Left = null;
-        while (true)
+        current = node;
+        temp.Value = value;
+
+        if (value < current.Value)
         {
-            current = node;
-            temp.Value = value;
-            if (value < current.Value)
+            if (node.Left == null)
             {
-                if (node.Left == null)
-                {
-                    node.Left = temp;
-                }
-                else
-                {
-                    CreateNode(node.Left, value);
-                }
+                node.Left = temp;
             }
             else
             {
-                if (node.Right == null)
-                {
-                    node.Right = temp;
-                }
-                else
-                {
-                    CreateNode(node.Right, value);
-                }
+                CreateNode(node.Left, value);
             }
-            break;
+        }
+        else
+        {
+            if (node.Right == null)
+            {
+                node.Right = temp;
+            }
+            else
+            {
+                CreateNode(node.Right, value);
+            }
         }
     }
     return node;
