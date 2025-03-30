@@ -15,7 +15,7 @@ Node StartingTree()
 
     for (int i = 1; i < array.Length; i++)
     {
-        CreateNode(node, i);
+        CreateNode(node, array[i]);
 
     }
 
@@ -60,7 +60,4 @@ Node StartingTree()
 Node node = StartingTree();
 
 Console.WriteLine(node.Value);
-Console.WriteLine(node.Left.Value);
-Console.WriteLine(node.Right.Value);
-Console.WriteLine(node.Left.Value);
 Console.ReadLine();
